@@ -1,15 +1,11 @@
-from fibonacci import fibonacci
+import fibonacci
 
-def main():
-    try:
-        limit = int(input("Enter the number of Fibonacci terms: "))
-        fibonacci_numbers = fibonacci(limit)
-        
-        print(f"Fibonacci sequence {limit}:")
-        print(', '.join(map(str, fibonacci_numbers)))
-        
-    except Exception:
-        print("wrong input!")
+def fibonacci(limit):
+    fibonacci_numbers = []
+    a, b = 0, 1
     
-if __name__ == "__main__":
-    main()
+    for _ in range(limit):
+        fibonacci_numbers.append(a)
+        a, b = b, a + b
+        
+    return fibonacci_numbers
